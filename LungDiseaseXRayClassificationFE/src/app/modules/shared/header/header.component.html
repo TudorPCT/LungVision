@@ -1,0 +1,26 @@
+<div class="main">
+  <div class="branding">
+    <div class="logo-wrapper">
+      <img id="logo"
+           src="{{ logoUrl }}"
+           alt="{{logoAlt}}"
+           [ngStyle]="{'width' : '60%', 'height' : 'auto'}">
+    </div>
+    <h1>
+      <span class="first-branding-text">{{firstTitle}}</span>
+      <span class="second-branding-text">{{secondTitle}}</span>
+    </h1>
+  </div>
+
+  <div class="nav">
+    <div class="language-picker">
+      <i class="pi pi-globe" style="font-size: 0.75rem"></i>
+      <p-dropdown [options]="languages" optionLabel="name" optionValue="code"
+                  (onChange)="changeLanguage($event)"></p-dropdown>
+    </div>
+
+    <div *ngIf="!authService.isAuthenticated">
+      <p-button type="button" class="p-button-raised p-button-rounded">Login</p-button>
+    </div>
+  </div>
+</div>
