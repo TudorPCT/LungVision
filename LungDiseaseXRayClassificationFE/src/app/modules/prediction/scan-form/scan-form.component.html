@@ -1,0 +1,30 @@
+<div class="form-wrapper">
+  <div class="form-info" *ngIf="phase=='choose'">
+    <h3>{{info}}</h3>
+  </div>
+
+  <p-progressBar
+    *ngIf="phase=='loading'"
+    mode="indeterminate"
+    [style]="{'height':'6px'}"
+    class="custom-progress-bar"
+    ></p-progressBar>
+
+<!--  <p-chart type="doughnut" [data]="data" [options]="chartOptions" [style]="{'width': '40%'}"></p-chart>-->
+
+  <p-fileUpload
+    (uploadHandler)="onPredict($event)"
+    (onSelect)="onSelect($event)"
+    (onClear)="onCancel($event)"
+    [multiple]="false"
+    [customUpload]="true"
+    accept="image/*"
+    [maxFileSize]="1000000000"
+    [disabled]="phase=='loading'"
+    [chooseLabel]="chooseLabel!"
+    [uploadLabel]="uploadLabel!"
+    [uploadIcon]="'pi pi-chart-pie'"
+    [cancelLabel]="cancelLabel!"
+    id="file-upload">
+  </p-fileUpload>
+</div>

@@ -1,0 +1,93 @@
+.form-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 40vw;
+  background-color: #13131e;
+  border-radius: 20px;
+}
+
+.custom-progress-bar{
+  width: 70%;
+}
+
+:host /deep/ .p-progressbar{
+  background-color: #64CDB4;
+  border-radius: 30px;
+}
+
+:host /deep/ .p-progressbar .p-progressbar-value{
+  background-color: #E18C41;
+  border-radius: 30px;
+}
+
+.form-wrapper > .form-info{
+  width: 80%;
+}
+.form-wrapper > .form-info > h3{
+  color: #64CDB4;
+  text-align: center;
+  font-size: 2rem;
+}
+
+:host /deep/ .p-fileupload-content{
+  display: none;
+}
+
+p-fileupload{
+  width: 70%;
+}
+
+:host /deep/ .p-fileupload-buttonbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+:host /deep/ .p-fileupload-buttonbar > .p-button, :host /deep/ .p-fileupload-buttonbar > p-button > button{
+  background-color: #E18C41;
+  border-radius: 30px;
+  padding: 0.25rem 1rem;
+  margin: 10px;
+  border: none;
+}
+
+:host /deep/ .p-fileupload-buttonbar > .p-button:active, :host /deep/ .p-fileupload-buttonbar > p-button > button:active{
+  background-color: #a9662e;
+}
+
+@media screen and (max-width: 1231px) and (min-width: 914px){
+  :host /deep/ .p-fileupload-choose {
+    min-width: 6.4rem;
+    display: flex;
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0.5rem 0 !important;
+  }
+}
+
+@media screen and (max-width: 913px){
+
+  .form-wrapper{
+    height: 50vh;
+    width: 60%;
+  }
+
+  :host /deep/ .p-fileupload-buttonbar{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .form-wrapper > .form-info > h3{
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .form-wrapper > .form-info > h3{
+    font-size: 1rem;
+  }
+}

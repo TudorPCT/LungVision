@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./prediction.component.css']
 })
 export class PredictionComponent {
-
+  scan: string | undefined;
+  constructor() { }
 }

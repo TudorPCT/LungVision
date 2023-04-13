@@ -16,7 +16,11 @@
     <div class="language-picker">
       <i class="pi pi-globe" style="font-size: 0.75rem"></i>
       <p-dropdown [options]="languages" optionLabel="name" optionValue="code"
-                  (onChange)="changeLanguage($event)"></p-dropdown>
+                  (onChange)="changeLanguage($event)">
+        <ng-template let-option pTemplate="selectedItem">
+          {{option.code.charAt(0).toUpperCase() + option.code.slice(1)}}
+        </ng-template>
+      </p-dropdown>
     </div>
 
     <div *ngIf="!authService.isAuthenticated">
