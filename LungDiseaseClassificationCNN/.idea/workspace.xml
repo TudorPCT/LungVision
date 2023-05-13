@@ -4,75 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1e0a3e3-8469-43c3-85fb-258a46292dd1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/._main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/LungDiseaseClassificationCNN.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LungDiseaseClassificationCNN.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_preprocessing/data_augmentation.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_preprocessing/data_augmentation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_preprocessing/lung_disease_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_preprocessing/lung_disease_dataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_preprocessing/save_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_preprocessing/save_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_preprocessing/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_preprocessing/setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/model_history/model-1-history.npy" beforeDir="false" afterPath="$PROJECT_DIR$/models/model_history/model-1-history.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/model_history/model-3-history.npy" beforeDir="false" afterPath="$PROJECT_DIR$/models/model_history/model-3-history.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/model_history/model-4-history.npy" beforeDir="false" afterPath="$PROJECT_DIR$/models/model_history/model-4-history.npy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/model_structure/._model-3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/model_structure/model-1.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/model_structure/model-1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/model_structure/model-2.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/model_structure/model-2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/model_structure/model-3.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/model_structure/model-3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/model_structure/model-4.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/model_structure/model-4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_01/fingerprint.pb" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_01/fingerprint.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_01/keras_metadata.pb" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_01/keras_metadata.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_01/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_01/saved_model.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_01/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_01/variables/variables.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_01/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_01/variables/variables.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_02/fingerprint.pb" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_02/fingerprint.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_02/keras_metadata.pb" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_02/keras_metadata.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_02/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_02/saved_model.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_02/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_02/variables/variables.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_02/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_02/variables/variables.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_03/fingerprint.pb" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_03/fingerprint.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_03/keras_metadata.pb" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_03/keras_metadata.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_03/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_03/saved_model.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_03/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_03/variables/variables.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_03/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_03/variables/variables.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_04/fingerprint.pb" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_04/fingerprint.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_04/keras_metadata.pb" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_04/keras_metadata.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_04/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_04/saved_model.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_04/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_04/variables/variables.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_04/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_04/variables/variables.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_05/fingerprint.pb" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_05/fingerprint.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_05/keras_metadata.pb" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_05/keras_metadata.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_05/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_05/saved_model.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_05/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_05/variables/variables.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_05/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_05/variables/variables.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_06/fingerprint.pb" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_06/fingerprint.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_06/keras_metadata.pb" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_06/keras_metadata.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_06/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_06/saved_model.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_06/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_06/variables/variables.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_06/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_06/variables/variables.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_07/fingerprint.pb" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_07/fingerprint.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_07/keras_metadata.pb" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_07/keras_metadata.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_07/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_07/saved_model.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_07/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_07/variables/variables.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_07/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_07/variables/variables.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_08/fingerprint.pb" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_08/fingerprint.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_08/keras_metadata.pb" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_08/keras_metadata.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_08/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_08/saved_model.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_08/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_08/variables/variables.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_08/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_08/variables/variables.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_09/fingerprint.pb" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_09/fingerprint.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_09/keras_metadata.pb" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_09/keras_metadata.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_09/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_09/saved_model.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_09/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_09/variables/variables.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_09/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_09/variables/variables.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_10/fingerprint.pb" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_10/fingerprint.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_10/keras_metadata.pb" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_10/keras_metadata.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_10/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_10/saved_model.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_10/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_10/variables/variables.data-00000-of-00001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trained_model/model-3/epoch_10/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/models/trained_model/model-3/epoch_10/variables/variables.index" afterDir="false" />
-    </list>
+    <list default="true" id="a1e0a3e3-8469-43c3-85fb-258a46292dd1" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,20 +43,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Volumes/MyPassport/licenta/LungDiseaseXRayClassification/LungDiseaseClassificationCNN&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Volumes/MyPassport/licenta/LungDiseaseXRayClassification/LungDiseaseClassificationCNN",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -146,7 +78,7 @@
       <workItem from="1683223479795" duration="1431000" />
       <workItem from="1683612856691" duration="5580000" />
       <workItem from="1683621926233" duration="4242000" />
-      <workItem from="1683985802333" duration="4864000" />
+      <workItem from="1683985802333" duration="5775000" />
     </task>
     <servers />
   </component>
