@@ -13,7 +13,7 @@ def get_train_transform():
             A.ColorJitter(p=0.5),
             A.GaussNoise(mean=10, p=0.5),
             A.Normalize(mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225)),
-            ToTensorV2(),
+            # ToTensorV2(),
         ]
     )
 
@@ -21,8 +21,10 @@ def get_train_transform():
 def get_original_transform():
     return A.Compose(
         [
-            A.Normalize(mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225)),
-            ToTensorV2(),
+            A.LongestMaxSize(max_size=256, always_apply=True),
+            # A.Normalize(mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225), always_apply=True),
+            A.PadIfNeeded(min_height=256, min_width=256, border_mode=0, value=(0, 0, 0), always_apply=True),
+            # ToTensorV2(),
         ]
     )
 

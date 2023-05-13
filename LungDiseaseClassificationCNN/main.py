@@ -1,6 +1,6 @@
-import os
-import shutil
-
+# import os
+# import shutil
+#
 import splitfolders
 
 # https://www.medrxiv.org/content/10.1101/2021.07.30.21261225v1.full
@@ -30,3 +30,4 @@ splitfolders.ratio('./LungDiseaseOriginalDataset', ratio=(.8, .1, .1))
 #     for image in os.listdir(f"./LungDiseaseOriginalDataset/{label}"):
 #         if image.startswith("."):
 #             os.remove(f"./LungDiseaseOriginalDataset/{label}/{image}")
+

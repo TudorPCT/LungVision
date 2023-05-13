@@ -15,8 +15,7 @@ class LungDiseaseDataset(Dataset):
 
     def __getitem__(self, index):
         image_filepath = self.image_paths[index]
-        image = cv2.imread(image_filepath)
-        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        image = cv2.imread(image_filepath, cv2.COLOR_BGR2RGB)
         label = self.labels_dict[os.path.normpath(image_filepath).split(os.sep)[-2]]
         if self.transform is not None:
             image = self.transform(image=image)["image"]

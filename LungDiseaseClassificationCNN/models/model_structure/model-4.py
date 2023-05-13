@@ -3,29 +3,40 @@ import os
 
 from models.util import train_model, load_datasets, evaluate_model
 
-data_shape = (32, 32, 1)
 
-inputs = tf.keras.Input(shape=data_shape)
-x = tf.keras.layers.Rescaling(scale=1.0 / 255)(inputs)
-x = tf.keras.layers.Conv2D(filters=32, kernel_size=(3, 3), activation="relu")(x)
-x = tf.keras.layers.MaxPooling2D(pool_size=(2, 2))(x)
-x = tf.keras.layers.Conv2D(filters=64, kernel_size=(3, 3), activation="relu")(x)
-x = tf.keras.layers.MaxPooling2D(pool_size=(2, 2))(x)
-x = tf.keras.layers.Flatten()(x)
-x = tf.keras.layers.Dense(1024, activation="relu")(x)
-x = tf.keras.layers.Dense(200, activation="relu")(x)
+def build_model(shape, class_count):
+    inputs = tf.keras.Input(shape=shape)
+    x = tf.keras.layers.Rescaling(scale=1.0 / 255)(inputs)
+    x = tf.keras.layers.Conv2D(filters=32, kernel_size=(3, 3), activation="relu")(x)
+    x = tf.keras.layers.MaxPooling2D(pool_size=(2, 2))(x)
+    x = tf.keras.layers.Conv2D(filters=64, kernel_size=(3, 3), activation="relu")(x)
+    x = tf.keras.layers.MaxPooling2D(pool_size=(2, 2))(x)
+    x = tf.keras.layers.Flatten()(x)
+    x = tf.keras.layers.Dense(1024, activation="relu")(x)
+    x = tf.keras.layers.Dense(200, activation="relu")(x)
 
-num_classes = 4
-outputs = tf.keras.layers.Dense(num_classes, activation="softmax")(x)
+    outputs = tf.keras.layers.Dense(class_count, activation="softmax")(x)
 
-model = tf.keras.Model(inputs=inputs, outputs=outputs)
+    return tf.keras.Model(inputs=inputs, outputs=outputs)
 
-model.summary()
 
-train_dataset, validation_dataset, test_dataset = load_datasets(64, data_shape[0:2], color_mode='grayscale')
+if __name__ == '__main__':
+    data_shape = (32, 32, 1)
+    num_classes = 4
+    path = "../../output"
 
-filename = os.path.splitext(os.path.basename(__file__))[0]
+    model = build_model(data_shape, num_classes)
+    model.summary()
 
-train_model(model, filename, train_dataset, validation_dataset, 20)
+    train_dataset, validation_dataset, test_dataset = load_datasets(path, 64, data_shape[0:2])
 
-evaluate_model(model, test_dataset)
+    filename = os.path.splitext(os.path.basename(__file__))[0]
+
+    train_model(model, filename, train_dataset, validation_dataset, 10)
+
+    # model = tf.keras.models.load_model("../trained_model/model-3/epoch_06")
+
+    evaluate_model(model, test_dataset)
+
+
+

@@ -21,7 +21,7 @@ def save_data(path, phase, dataset, limit, data_type='original'):
         [instance_transform for instance_transform in dataset.transform
          if not isinstance(instance_transform, (A.Normalize, ToTensorV2))]
     )
-    lens = {0: 5000 // 1583, 1: 5000 // 4273, 2: 5000 // 700, 3: 5000 // 576}
+    lens = {0: 4000 // 1583, 1: 4273 // 4273, 2: 4000 // 700, 3: 4000 // 576}
     for index in range(limit):
 
         if data_type == 'original':
