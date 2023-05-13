@@ -1,1 +1,0 @@
-web: gunicorn LungDiseaseXRayClassification.api.app:app --log-file=logs.txt
