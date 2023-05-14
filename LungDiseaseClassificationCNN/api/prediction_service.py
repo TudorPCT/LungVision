@@ -1,8 +1,8 @@
+
 import numpy as np
 import tensorflow as tf
 from tensorflow.python.keras.models import Model
 from LungDiseaseClassificationCNN.api.prediction_dto import PredictionDto
-from LungDiseaseClassificationCNN.data_preprocessing.setup import get_original_transform
 
 
 class PredictionService:
@@ -13,10 +13,9 @@ class PredictionService:
     @staticmethod
     def predict(scan_bytes):
 
-        scan = tf.io.decode_image(scan_bytes, channels=PredictionService.shape[2]).numpy()
+        scan = tf.io.decode_image(scan_bytes, channels=PredictionService.shape[2])
 
-        for transform in get_original_transform():
-            scan = transform(image=scan)["image"]
+        scan = tf.image.resize_with_pad(scan, PredictionService.shape[0], PredictionService.shape[1]).numpy()
 
         scan_prediction = PredictionService.model.predict(np.expand_dims(scan, axis=0))
 
