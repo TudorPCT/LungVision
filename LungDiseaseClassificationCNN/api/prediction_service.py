@@ -1,16 +1,12 @@
-import io
-import os
-
-import PIL.Image as Image
 import numpy as np
 import tensorflow as tf
 from tensorflow.python.keras.models import Model
-from api.prediction_dto import PredictionDto
-from data_preprocessing.setup import get_original_transform
+from LungDiseaseClassificationCNN.api.prediction_dto import PredictionDto
+from LungDiseaseClassificationCNN.data_preprocessing.setup import get_original_transform
 
 
 class PredictionService:
-    model: Model = tf.keras.models.load_model("../models/trained_model/model-3/epoch_06")
+    model: Model = tf.keras.models.load_model("./LungDiseaseClassificationCNN/models/trained_model/model-3/epoch_06")
     shape = model.get_config()["layers"][0]['config']["batch_input_shape"][1:4]
     labels = ['Covid19', 'Normal', 'Pneumonia', 'Tuberculosis']
 

@@ -2,7 +2,7 @@ import pdb
 
 from flask import request, Response
 
-from api.prediction_service import PredictionService
+from LungDiseaseClassificationCNN.api.prediction_service import PredictionService
 
 
 class PredictionController:

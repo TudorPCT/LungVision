@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_cors import CORS
 
-from api.prediction_controller import PredictionController
+from LungDiseaseClassificationCNN.api.prediction_controller import PredictionController
 
 app = Flask(__name__)
 CORS(app)
