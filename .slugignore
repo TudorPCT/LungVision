@@ -1,2 +1,8 @@
 
+./LungDiseaseClassificationCNN/models/trained_model/model-1
 ./LungDiseaseClassificationCNN/models/trained_model/model-2
+./LungDiseaseClassificationCNN/models/trained_model/model_history
+./LungDiseaseClassificationCNN/models/trained_model/model_structure
+./LungDiseaseClassificationCNN/data_preprocessing/data_augmentation.py
+./LungDiseaseClassificationCNN/data_preprocessing/lung_disease_dataset.py
+./LungDiseaseClassificationCNN/data_preprocessing/save_data.py
