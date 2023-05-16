@@ -114,6 +114,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
                     <source>19</source>
+                    <source>19</source>
                     <target>19</target>
                 </configuration>
             </plugin>
