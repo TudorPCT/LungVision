@@ -2,7 +2,7 @@
 import numpy as np
 import tensorflow as tf
 from tensorflow.python.keras.models import Model
-from LungDiseaseClassificationCNN.api.prediction_dto import PredictionDto
+from api.prediction_dto import PredictionDto
 
 
 class PredictionService:
