@@ -2,11 +2,11 @@
 import numpy as np
 import tensorflow as tf
 from tensorflow.python.keras.models import Model
-from prediction_dto import PredictionDto
+from api.prediction_dto import PredictionDto
 
 
 class PredictionService:
-    model: Model = tf.keras.models.load_model("../models/trained_model/model-3/epoch_06")
+    model: Model = tf.keras.models.load_model("./models/trained_model/model-3/epoch_06")
     shape = model.get_config()["layers"][0]['config']["batch_input_shape"][1:4]
     labels = ['Covid19', 'Normal', 'Pneumonia', 'Tuberculosis']
 
