@@ -6,7 +6,7 @@ from prediction_dto import PredictionDto
 
 
 class PredictionService:
-    model: Model = tf.keras.models.load_model("./LungDiseaseClassificationCNN/models/trained_model/model-3/epoch_06")
+    model: Model = tf.keras.models.load_model("../models/trained_model/model-3/epoch_06")
     shape = model.get_config()["layers"][0]['config']["batch_input_shape"][1:4]
     labels = ['Covid19', 'Normal', 'Pneumonia', 'Tuberculosis']
 
