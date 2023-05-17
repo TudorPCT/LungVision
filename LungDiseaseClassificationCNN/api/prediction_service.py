@@ -2,7 +2,7 @@
 import numpy as np
 import tensorflow as tf
 from tensorflow.python.keras.models import Model
-from LungDiseaseClassificationCNN.api.prediction_dto import PredictionDto
+from api.prediction_dto import PredictionDto
 
 
 class PredictionService:
@@ -20,6 +20,6 @@ class PredictionService:
         scan_prediction = PredictionService.model.predict(np.expand_dims(scan, axis=0))
 
         prediction_dto = PredictionDto(PredictionService.labels[np.argmax(scan_prediction[0])],
-                                       scan_prediction)
+                                       scan_prediction[0], PredictionService.labels)
 
         return prediction_dto
