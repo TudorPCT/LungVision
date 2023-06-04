@@ -13,6 +13,6 @@ export class HeroComponent {
   constructor(public translateService: TranslateService) {
     this.headline = this.translateService.instant('headline');
     this.introduction = this.translateService.instant('introduction');
-    this.heroImage = 'https://res.cloudinary.com/dz8ngjppi/image/upload/v1685911852/lungs_epigrm.png';
+    this.heroImage = 'assets/images/lungs.png';
   }
 }

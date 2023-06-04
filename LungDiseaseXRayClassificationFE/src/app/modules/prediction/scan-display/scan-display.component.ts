@@ -11,6 +11,6 @@ export class ScanDisplayComponent{
   imagePath: string;
 
   constructor() {
-    this.imagePath = 'https://res.cloudinary.com/dz8ngjppi/image/upload/v1685911852/predict_image_wz2flm.png';
+    this.imagePath = '/assets/images/predict_image.png';
   }
 }
