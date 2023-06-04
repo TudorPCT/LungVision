@@ -28,7 +28,7 @@ export class HeaderComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.logoUrl = 'assets/images/logo.png';
+    this.logoUrl = 'https://res.cloudinary.com/dz8ngjppi/image/upload/v1685911851/logo_aiqz6p.png';
 
     this.loginLabel = this.translate.instant('auth.login');
 
