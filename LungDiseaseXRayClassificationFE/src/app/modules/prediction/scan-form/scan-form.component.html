@@ -10,12 +10,29 @@
     class="custom-progress-bar"
     ></p-progressBar>
 
-<!--  <p-chart type="doughnut" [data]="data" [options]="chartOptions" [style]="{'width': '40%'}"></p-chart>-->
+  <p-chart
+    *ngIf="phase=='result'"
+    type="doughnut"
+    [data]="data"
+    [options]="options"
+  ></p-chart>
+
+  <p-button
+    *ngIf="phase=='result'"
+    type="p-icon-button"
+    icon="pi pi-save"
+    (click)="onSavePressed.emit(true)"
+    [style]="{'position': 'absolute', 'top': '20px', 'right': '20px'}"
+    ></p-button>
+
+  <div class="form-info" *ngIf="phase=='result'">
+    <h3 style="font-size: 1.5rem">{{resultMessage}}</h3>
+  </div>
 
   <p-fileUpload
-    (uploadHandler)="onPredict($event)"
+    (uploadHandler)="onPredict()"
     (onSelect)="onSelect($event)"
-    (onClear)="onCancel($event)"
+    (onClear)="onCancel()"
     [multiple]="false"
     [customUpload]="true"
     accept="image/*"

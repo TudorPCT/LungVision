@@ -1,32 +1,44 @@
 .form-wrapper{
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   height: 40vw;
-  background-color: #13131e;
+  border-color: rgba(95, 99, 104, 1);
   border-radius: 20px;
+  border-style: solid;
+  border-width: 2px;
+  position: relative;
+  padding-bottom: 70px;
+  gap: 40px;
+  background-color: #0d051c;
+}
+
+:host /deep/ p-chart div canvas{
+  width: 100% !important;
+  height: auto !important;
+}
+
+:host /deep/ p-chart div{
+  width: 100% !important;
+  height: auto !important;
+}
+
+p-chart{
+  height: 500px;
+  width: 500px;
 }
 
 .custom-progress-bar{
   width: 70%;
 }
 
-:host /deep/ .p-progressbar{
-  background-color: #64CDB4;
-  border-radius: 30px;
-}
-
-:host /deep/ .p-progressbar .p-progressbar-value{
-  background-color: #E18C41;
-  border-radius: 30px;
-}
-
 .form-wrapper > .form-info{
   width: 80%;
 }
+
 .form-wrapper > .form-info > h3{
-  color: #64CDB4;
+  color: #cdc2da;
   text-align: center;
   font-size: 2rem;
 }
@@ -36,44 +48,47 @@
 }
 
 p-fileupload{
-  width: 70%;
+  width: 80%;
+  position: absolute;
+  bottom: 10px;
 }
 
 :host /deep/ .p-fileupload-buttonbar{
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-}
-
-:host /deep/ .p-fileupload-buttonbar > .p-button, :host /deep/ .p-fileupload-buttonbar > p-button > button{
-  background-color: #E18C41;
-  border-radius: 30px;
-  padding: 0.25rem 1rem;
-  margin: 10px;
+  background: transparent;
   border: none;
 }
 
-:host /deep/ .p-fileupload-buttonbar > .p-button:active, :host /deep/ .p-fileupload-buttonbar > p-button > button:active{
-  background-color: #a9662e;
+:host /deep/ .p-fileupload-buttonbar > .p-button, :host /deep/ .p-fileupload-buttonbar > p-button > button{
+  border: none;
 }
 
-@media screen and (max-width: 1231px) and (min-width: 914px){
-  :host /deep/ .p-fileupload-choose {
-    min-width: 6.4rem;
-    display: flex;
-    flex-direction: column !important;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 0.5rem 0 !important;
+@media screen and (max-width: 1932px) {
+ p-chart{
+   width: 400px;
+   height: 400px;
+ }
+}
+
+@media screen and (max-width: 1560px) {
+ p-chart{
+   width: 300px;
+   height: 300px;
+ }
+}
+
+@media screen and (max-width: 1366px){
+
+  p-chart{
+   width: 500px;
+   height: 500px;
   }
-}
-
-@media screen and (max-width: 913px){
 
   .form-wrapper{
-    height: 50vh;
-    width: 60%;
+    width: 80%;
+    min-height: 800px;
   }
 
   :host /deep/ .p-fileupload-buttonbar{
@@ -86,8 +101,26 @@ p-fileupload{
   }
 }
 
+
+@media screen and (max-width: 700px) {
+  p-chart {
+    width: 400px;
+    height: 400px;
+  }
+}
+
 @media screen and (max-width: 600px){
+
   .form-wrapper > .form-info > h3{
     font-size: 1rem;
   }
 }
+
+@media screen and (max-width: 467px){
+
+  p-chart {
+    width: 300px;
+    height: 300px;
+  }
+}
+

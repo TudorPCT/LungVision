@@ -1,34 +1,75 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {AuthService} from "../../../services/auth/auth.service";
 import {TranslateService} from "@ngx-translate/core";
+import { MenuItem, MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit{
   logoUrl : string | undefined;
   logoAlt : string;
-  firstTitle : string;
-  secondTitle : string;
+  title : string;
   selectedLanguage: string = 'en';
   languages: any;
 
-  constructor(public authService: AuthService, public translate: TranslateService) {
+  @Output() onLogin = new EventEmitter<boolean>();
+
+  menuItems: MenuItem[];
+  loginLabel: string = '';
+
+  constructor(public authService: AuthService, public translate: TranslateService, private messageService: MessageService) {
+    this.menuItems = [];
     this.logoAlt = 'Logo';
     this.languages = this.getLanguages();
-    this.firstTitle = 'Lung';
-    this.secondTitle = 'Vision';
+    this.title = 'LungVision';
   }
 
   ngOnInit() {
     this.logoUrl = 'assets/images/logo.png';
+
+    this.loginLabel = this.translate.instant('auth.login');
+
+    this.menuItems = [
+      {
+        label: 'Navigate',
+        items: [
+          {
+              label: 'Home',
+              icon: 'pi pi-home',
+              routerLink: '/'
+          },
+          {
+              label: 'Predict',
+              icon: 'pi pi-fw pi-pencil',
+              routerLink: '/prediction'
+          },
+          {
+              label: 'Saved Predictions',
+              icon: 'pi pi-save',
+              routerLink: '/saved-predictions'
+          }
+        ]
+      },
+      {
+        label: 'Options',
+        items: [
+          {
+              label: 'Logout',
+              icon: 'pi pi-sign-out',
+              command: () => {
+                  this.authService.logout();
+                  this.messageService.add({severity:'success', summary: 'Success', detail: 'Logged out successfully'});
+              },
+              routerLink: '/'
+          },
+        ]
+      }
+    ];
   }
 
-  onLogin(){
-    console.log('Login');
-  }
 
   changeLanguage($event: any) {
     this.translate.use($event.value);
@@ -781,6 +822,4 @@ export class HeaderComponent implements OnInit{
       }
     }
   }
-
-
 }

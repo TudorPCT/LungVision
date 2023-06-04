@@ -1,4 +1,5 @@
-import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {PredictionDto} from "../../../models/prediction-dto";
 
 @Component({
   selector: 'app-scan-display',
@@ -6,7 +7,7 @@ import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
   styleUrls: ['./scan-display.component.css']
 })
 export class ScanDisplayComponent{
-  @Input() scan: string | undefined;
+  @Input() scan: PredictionDto | undefined;
   imagePath: string;
 
   constructor() {

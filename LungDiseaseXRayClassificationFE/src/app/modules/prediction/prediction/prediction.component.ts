@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {PredictionDto} from "../../../models/prediction-dto";
 
 @Component({
   selector: 'app-prediction',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./prediction.component.css']
 })
 export class PredictionComponent {
-  scan: string | undefined;
+  scan: PredictionDto | undefined;
+  showModal: boolean = false;
   constructor() { }
 }

@@ -1,0 +1,24 @@
+.card{
+  margin: 5%;
+  background: transparent;
+  border-color: rgba(95, 99, 104, 1);
+  border-radius: 20px;
+  border-style: solid;
+  border-width: 2px;
+}
+
+:host /deep/ .p-datatable-header{
+  border-radius: 20px 20px 0 0;
+}
+
+:host /deep/ .p-paginator-bottom{
+  border-radius: 0 0 20px 20px ;
+}
+
+:host /deep/ .p-datatable-wrapper{
+  min-height: 50vh;
+}
+
+:host /deep/ .p-datatable-wrapper, :host /deep/ .p-datatable-header, :host /deep/ .p-paginator, :host /deep/ .p-datatable .p-datatable-thead > tr > th, :host /deep/ .p-datatable .p-datatable-tbody > tr{
+  background-color: #0d051c;
+}

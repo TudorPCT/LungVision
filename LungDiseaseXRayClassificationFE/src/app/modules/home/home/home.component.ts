@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AuthService} from "../../../services/auth/auth.service";
 
 @Component({
   selector: 'app-home',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  showModal: boolean = false;
+
+  constructor(public authService: AuthService) {}
 
 }

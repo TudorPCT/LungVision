@@ -8,6 +8,14 @@
   <app-scan-form
     class="col-md-5 scan-form"
     (scan)="scan = $event"
+    (onSavePressed)="showModal = true"
   >
   </app-scan-form>
+
+  <app-scan-save
+  [display]="showModal"
+  (displayValueUpdated)="showModal=$event"
+  [scan]="scan"></app-scan-save>
+
+
 </div>

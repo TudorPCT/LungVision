@@ -2,6 +2,11 @@
   height: 100%;
 }
 
+:host /deep/ .p-image-preview-container{
+  display: flex;
+  justify-content: center;
+}
+
 .bg-image {
   background-size: contain;
   background-position: center;
@@ -43,7 +48,12 @@
   justify-content: center;
 }
 
-@media only screen and (max-width: 913px) {
+p-image{
+  height: 100%;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1366px) {
   .image-wrapper{
     height: 30%;
   }

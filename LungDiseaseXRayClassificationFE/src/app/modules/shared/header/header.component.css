@@ -6,6 +6,11 @@
   padding: 0 1rem;
   user-select: none;
   width: 100%;
+  margin-bottom: 2%;
+}
+
+:host /deep/ .p-menu.p-menu-overlay, :host /deep/ .p-menu .p-submenu-header{
+  background-color: #0d051c;
 }
 
 .main > .branding {
@@ -13,33 +18,29 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  width: 45%;
+  width: 600px;
 }
 
 .main > .branding > .logo-wrapper {
-  width: 30%;
+  width: 25%;
   height: auto;
   display: flex;
   justify-content: flex-end;
 }
 
 .main > .branding > h1 {
-  width: 70%;
+  width: 75%;
   height: auto;
 }
 
 .main > .branding > h1 > span{
-  font-size: 150%;
+  font-size: 4rem;
   font-family: cursive;
   font-weight: bold;
 }
 
-.main > .branding > h1 > .first-branding-text{
-  color: #E18C41;
-}
-
-.main > .branding > h1 > .second-branding-text{
-  color: #64CDB4;
+.main > .branding > h1 > .branding-text{
+  color: #cdc2da;
 }
 
 .main > .nav{
@@ -53,26 +54,38 @@
   width: 55%;
 }
 
-.main > .nav > div > .p-element ::ng-deep button{
-  border-radius: 30px !important;
-  background-color: #EFA350;
+.main > .nav > div > .p-element :host /deep/ button{
   font-size: 1.5rem;
   padding: 0 1rem 0.15rem 1rem;
-  color: rgb(33, 37, 41);
   margin: 0;
   border: none;
 }
 
-.main > .nav > div > .p-element ::ng-deep button:active{
-  background-color: #a9662e;
+
+div > .language-picker{
+  width: 55px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-div > .language-picker > p-dropdown ::ng-deep .p-hidden-accessible {
+:host /deep/ .p-dropdown {
+  width: 76px !important;
+  background: none;
+  border: none;
+}
+
+
+:host /deep/ .p-hidden-accessible {
   display: none !important;
 }
 
 .main > .nav > div > .p-element, .main > .nav > div > .pi{
-  color: #808080;
+  color: rgba(255, 255, 255, 0.87);
 }
 
-
+@media screen and (max-width: 768px){
+  .main > .branding > h1 > span{
+    font-size: 2rem;
+  }
+}

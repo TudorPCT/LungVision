@@ -1,5 +1,8 @@
+@import '~primeicons/primeicons.css';
+@import '~primeng/resources/primeng.min.css';
+
 body{
-  background-color: #161621;
+  background-color: #0b0618;
   padding: 0;
   margin: 0;
   height: 100vh;

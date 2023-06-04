@@ -25,12 +25,12 @@
   display: flex;
   flex-direction: column;
   padding-left: 10%;
-  padding-top: 10%;
+  padding-top: 13%;
   gap: 5%;
 }
 
 .hero__content > .hero__headline{
-  color: #E0CFC3;
+  color: #cdc2da;
   margin-top: 0;
 }
 

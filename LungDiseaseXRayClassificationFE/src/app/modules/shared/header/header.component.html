@@ -7,14 +7,13 @@
            [ngStyle]="{'width' : '60%', 'height' : 'auto'}">
     </div>
     <h1>
-      <span class="first-branding-text">{{firstTitle}}</span>
-      <span class="second-branding-text">{{secondTitle}}</span>
+      <span class="branding-text">{{title}}</span>
     </h1>
   </div>
 
   <div class="nav">
     <div class="language-picker">
-      <i class="pi pi-globe" style="font-size: 0.75rem"></i>
+      <i class="pi pi-globe" style="font-size: 14px"></i>
       <p-dropdown [options]="languages" optionLabel="name" optionValue="code"
                   (onChange)="changeLanguage($event)">
         <ng-template let-option pTemplate="selectedItem">
@@ -23,8 +22,21 @@
       </p-dropdown>
     </div>
 
-    <div *ngIf="!authService.isAuthenticated">
-      <p-button type="button" class="p-button-raised p-button-rounded">Login</p-button>
+    <div *ngIf="!authService.isAuthenticated()">
+      <p-button
+        type="button"
+        class="p-raised-button"
+        (onClick)="onLogin.emit(true)"
+        label="{{loginLabel}}"
+        icon="pi pi-sign-in"
+      ></p-button>
     </div>
+
+    <div *ngIf="authService.isAuthenticated()">
+      <p-menu #menu [model]="menuItems" [popup]="true"></p-menu>
+      <button pButton type="button" (click)="menu.toggle($event)" icon="pi pi-bars" label="Menu"></button>
+
+    </div>
+
   </div>
 </div>

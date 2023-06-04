@@ -1,0 +1,78 @@
+
+.p-dialog .p-dialog-header, .p-dialog .p-dialog-footer, .p-dialog .p-dialog-content{
+  background-color: transparent;
+}
+
+.p-dialog .p-dialog-header{
+  border-bottom: #808080 solid 2px;
+}
+
+.p-dialog .p-dialog-header-close-icon{
+  color: #808080 !important;
+}
+
+.p-dialog-title{
+  font-size: 2em;
+}
+
+.save-form{
+  padding: 5%;
+  align-items: center;
+  height: 100%;
+}
+
+.form-field{
+  display: flex;
+  flex-direction: row;
+  gap: 6%;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
+
+.name-form-field-label{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+}
+
+.input-field{
+  width: 90%;
+  background: transparent;
+  border: none;
+  border-bottom: #808080 solid 2px;
+  color: #E0CFC3;
+}
+
+.error{
+  color: rgb(255, 54, 54);
+  font-size: 0.8em;
+}
+
+input.ng-dirty.ng-invalid {
+  border-color: red
+}
+
+.calendar-wrapper{
+  margin-top: 10%;
+
+}
+
+.p-datepicker, .p-datepicker .p-datepicker-header{
+  background-color: transparent;
+}
+
+.p-calendar .p-datepicker{
+  width: 100% !important;
+}
+
+.input-dropdown-field{
+  width: 100%;
+}
+
+.form-field p-dropdown{
+  width: 90%;
+}
