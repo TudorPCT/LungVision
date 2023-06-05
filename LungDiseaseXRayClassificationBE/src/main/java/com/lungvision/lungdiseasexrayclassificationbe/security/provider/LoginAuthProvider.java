@@ -2,6 +2,8 @@ package com.lungvision.lungdiseasexrayclassificationbe.security.provider;
 
 import com.lungvision.lungdiseasexrayclassificationbe.security.service.UserSecurityDetailsService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -16,6 +18,7 @@ import org.springframework.stereotype.Component;
 public class LoginAuthProvider implements AuthenticationProvider {
     private final UserSecurityDetailsService userSecurityDetailsService;
     private final PasswordEncoder passwordEncoder;
+    private final MessageSource messageSource;
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
@@ -27,7 +30,7 @@ public class LoginAuthProvider implements AuthenticationProvider {
         if (passwordEncoder.matches(password, userSecurityDetails.getPassword())) {
             return new UsernamePasswordAuthenticationToken(email, password, userSecurityDetails.getAuthorities());
         } else {
-            throw new BadCredentialsException("Bad credentials");
+            throw new BadCredentialsException(messageSource.getMessage("user.error.bad.credentials", null, LocaleContextHolder.getLocale()));
         }
     }
 

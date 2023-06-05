@@ -4,6 +4,8 @@ import com.lungvision.lungdiseasexrayclassificationbe.model.User;
 import com.lungvision.lungdiseasexrayclassificationbe.repository.UserRepository;
 import com.lungvision.lungdiseasexrayclassificationbe.security.model.UserSecurityDetails;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -15,13 +17,14 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class UserSecurityDetailsService implements UserDetailsService {
     private final UserRepository userRepository;
+    private final MessageSource messageSource;
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Optional<User> user = userRepository.findByEmail(email);
 
         if (user.isEmpty()) {
-            throw new UsernameNotFoundException("User not found");
+            throw new UsernameNotFoundException(messageSource.getMessage("user.error.bad.credentials.login", null, LocaleContextHolder.getLocale()));
         }
         return new UserSecurityDetails(user.get());
     }
