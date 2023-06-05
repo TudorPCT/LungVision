@@ -1,10 +1,6 @@
 package com.lungvision.lungdiseasexrayclassificationbe.config;
 
-import com.lungvision.lungdiseasexrayclassificationbe.model.Role;
-import com.lungvision.lungdiseasexrayclassificationbe.model.User;
-import com.lungvision.lungdiseasexrayclassificationbe.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
