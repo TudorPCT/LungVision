@@ -11,7 +11,7 @@ export class AppComponent {
   title = 'LungDiseaseXRayClassificationFE';
 
   constructor(public translate: TranslateService) {
-    translate.addLangs(['en', 'ro']);
+    translate.addLangs(['en']);
     translate.setDefaultLang('en');
     translate.use('en');
   }
