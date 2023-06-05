@@ -23,16 +23,4 @@ public class AppConfig {
         return new RestTemplate();
     }
 
-
-//    @Bean
-//    CommandLineRunner run(UserRepository userRepository){
-//        return args ->{
-//            User user = new User();
-//            user.setEmail("admin@gmail.com");
-//            user.setPassword(passwordEncoder().encode("adminA1@"));
-//            user.setRole(Role.ROLE_USER);
-//            userRepository.save(user);
-//        };
-//    }
-
 }
