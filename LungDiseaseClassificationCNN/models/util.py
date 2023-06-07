@@ -49,5 +49,3 @@ def evaluate_model(model, dataset):
     loss, accuracy = model.evaluate(dataset)
     print("loss: %.2f" % loss)
     print("acc: %.2f" % accuracy)
-
-

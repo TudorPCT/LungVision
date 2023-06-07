@@ -1,6 +1,7 @@
 import tensorflow as tf
 import os
 
+from models.statistics import draw_loss_accuracy_graph
 from models.util import train_model, load_datasets, evaluate_model
 
 
@@ -35,19 +36,6 @@ if __name__ == '__main__':
 
     train_model(model, filename, train_dataset, validation_dataset, 10)
 
-    # model = tf.keras.models.load_model("../trained_model/model-3/epoch_06")
-
     evaluate_model(model, test_dataset)
 
-
-# Epoch 1: 0.9340
-# Epoch 2: 0.9452
-# Epoch 3: 0.9466
-# Epoch 4: 0.9424
-# Epoch 5: 0.9466
-# Epoch 6: 0.9607
-# Epoch 7: 0.9537
-# Epoch 8: 0.9593
-# Epoch 9: 0.9522
-# Epoch 10: 0.9551
-# Test epoch 10: 0.9581
+    draw_loss_accuracy_graph("../trained_model/model-3", test_dataset)
