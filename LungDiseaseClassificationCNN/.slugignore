@@ -1,5 +1,5 @@
-./LungDiseaseClassificationCNN/models/trained_model/model-1
-./LungDiseaseClassificationCNN/models/trained_model/model-2
-./LungDiseaseClassificationCNN/models/model_history
-./LungDiseaseClassificationCNN/models/model_structure
-./LungDiseaseClassificationCNN/data_preprocessing
+../models/trained_model/model-1
+../models/trained_model/model-2
+../models/model_history
+../models/model_structure
+../data_preprocessing
