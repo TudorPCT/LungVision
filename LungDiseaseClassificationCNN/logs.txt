@@ -1,0 +1,24 @@
+[2023-05-13 19:27:43 +0300] [42023] [INFO] Starting gunicorn 20.1.0
+[2023-05-13 19:27:43 +0300] [42023] [ERROR] Connection in use: ('0.0.0.0', 5000)
+[2023-05-13 19:27:43 +0300] [42023] [ERROR] Retrying in 1 second.
+[2023-05-13 19:27:44 +0300] [42023] [ERROR] Connection in use: ('0.0.0.0', 5000)
+[2023-05-13 19:27:44 +0300] [42023] [ERROR] Retrying in 1 second.
+[2023-05-13 19:27:45 +0300] [42023] [ERROR] Connection in use: ('0.0.0.0', 5000)
+[2023-05-13 19:27:45 +0300] [42023] [ERROR] Retrying in 1 second.
+[2023-05-13 19:27:46 +0300] [42023] [ERROR] Connection in use: ('0.0.0.0', 5000)
+[2023-05-13 19:27:46 +0300] [42023] [ERROR] Retrying in 1 second.
+[2023-05-13 19:27:47 +0300] [42023] [ERROR] Connection in use: ('0.0.0.0', 5000)
+[2023-05-13 19:27:47 +0300] [42023] [ERROR] Retrying in 1 second.
+[2023-05-13 19:27:48 +0300] [42023] [ERROR] Can't connect to ('0.0.0.0', 5000)
+[2023-05-13 22:24:20 +0300] [51766] [INFO] Starting gunicorn 20.1.0
+[2023-05-13 22:24:20 +0300] [51766] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2023-05-13 22:24:20 +0300] [51766] [ERROR] Retrying in 1 second.
+[2023-05-13 22:24:21 +0300] [51766] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2023-05-13 22:24:21 +0300] [51766] [ERROR] Retrying in 1 second.
+[2023-05-13 22:24:22 +0300] [51766] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2023-05-13 22:24:22 +0300] [51766] [ERROR] Retrying in 1 second.
+[2023-05-13 22:24:23 +0300] [51766] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2023-05-13 22:24:23 +0300] [51766] [ERROR] Retrying in 1 second.
+[2023-05-13 22:24:24 +0300] [51766] [ERROR] Connection in use: ('127.0.0.1', 8000)
+[2023-05-13 22:24:24 +0300] [51766] [ERROR] Retrying in 1 second.
+[2023-05-13 22:24:25 +0300] [51766] [ERROR] Can't connect to ('127.0.0.1', 8000)
