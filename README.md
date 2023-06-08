@@ -1,1 +1,1 @@
-# LungDiseaseXRayClassification
+# LungVision
