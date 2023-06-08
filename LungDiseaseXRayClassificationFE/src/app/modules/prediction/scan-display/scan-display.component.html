@@ -1,0 +1,19 @@
+<div class="image-wrapper">
+  <div class="bg-image" [style.background-image]="'url(' + imagePath + ')'">
+    <div class="scan-wrapper">
+      <div *ngIf="scan != undefined" class="scan">
+        <p-image
+          src="data:image/{{scan.fileType.toLowerCase()}};base64,{{scan.file}}"
+          alt="Uploaded Scan"
+          [style]="{'height': '100%', 'width': '100%'}"
+          height="100%"
+          width="auto"
+          [preview]="true"
+        ></p-image>
+      </div>
+      <div *ngIf="scan == undefined" class="scan-placeholder">
+        <i class="pi pi-image" style="font-size: 5vw; color: rgba(59,59,59,0.87)"></i>
+      </div>
+    </div>
+  </div>
+</div>

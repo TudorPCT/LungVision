@@ -1,0 +1,6 @@
+<app-header (onLogin)="showModal = $event"></app-header>
+<app-hero></app-hero>
+<app-auth
+  *ngIf="!authService.isAuthenticated()"
+  [display]="showModal"
+  (displayValueUpdated)="showModal=$event"></app-auth>

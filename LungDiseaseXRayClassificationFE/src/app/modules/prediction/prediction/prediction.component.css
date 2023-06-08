@@ -1,0 +1,26 @@
+.page-wrapper{
+  height: 80%;
+}
+
+
+@media only screen and (max-width: 1366px) {
+  .page-wrapper {
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center;
+    height: 100%;
+  }
+
+  .scan-display{
+    width: 100%;
+  }
+
+  .scan-form{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+}

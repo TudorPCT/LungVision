@@ -1,0 +1,102 @@
+<p-dialog
+  [(visible)]="display"
+  [modal]="true"
+  [draggable]="false"
+  [resizable]="true"
+  (onHide)="onHide()"
+  [style]="{ width: '450px' ,
+    'height': formHeight,
+     'background-color': '#0d051c',
+     'border-radius': '10px',
+     'padding': '30px',
+     'border': '1px solid #E0CFC3',
+     'color': '#E0CFC3'}"
+>
+  <ng-template pTemplate="header">
+    <div class="flex flex-row justify-content-center align-items-center" style="display: flex; gap: 20px;">
+      <span *ngIf="signUpTrigger" class="text-xl font-bold p-dialog-title">{{loginText}}  </span>
+      <span *ngIf="!signUpTrigger" class="text-xl font-bold p-dialog-title">{{signUpText}}</span>
+      <p-divider layout="vertical">
+        <b>OR</b>
+      </p-divider>
+      <p-toggleButton
+        [(ngModel)]="signUpTrigger"
+        onLabel="{{signUpText}}" offLabel="{{loginText}}"
+        onIcon="pi pi-user-plus" offIcon="pi pi-user"
+        (onChange)="changeForm()"
+      ></p-toggleButton>
+    </div>
+  </ng-template>
+
+  <form [formGroup]="authForm" (ngSubmit)="onSubmit()" class="auth-form">
+    <div class="email-form-field">
+      <label class="email-form-field-label" for="email">
+        <i class="pi pi-envelope" style="font-size: 1.5rem"></i>
+      </label>
+      <span class="p-float-label" style="width: 100%;">
+        <input
+          type="email"
+          name="user-email"
+          id="email"
+          pInputText
+          formControlName="email"
+          class="input-field"
+          (focusout)="onEmailFocusOut()"
+        />
+        <label for="email">Enter your e-mail</label>
+      </span>
+    </div>
+    <div *ngIf="isEmailInvalid" [innerHTML]="getEmailError()" class="error text-center"></div>
+    <div class="password-form-field">
+      <label class="password-form-field-label" for="password">
+        <i class="pi pi-lock" style="font-size: 1.5rem"></i>
+      </label>
+      <span class="p-float-label" style="width: 100%;">
+        <p-password
+          id="password"
+          formControlName="password"
+          class="input-field"
+          [feedback]="!signUpTrigger"
+          [style]="{'width': '100%'}"
+          (focusout)="onPasswordFocusOut()"
+        >
+          <ng-template pTemplate="footer">
+            <p-divider></p-divider>
+            <p class="mt-2">Suggestions</p>
+            <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
+                <li>At least one lowercase</li>
+                <li>At least one uppercase</li>
+                <li>At least one numeric</li>
+                <li>Minimum 8 characters</li>
+            </ul>
+          </ng-template>
+        </p-password>
+        <label for="password">Enter your password</label>
+      </span>
+    </div>
+    <div *ngIf="isPasswordInvalid" [innerHTML]="getPasswordError()" class="error text-center"></div>
+    <div *ngIf="!signUpTrigger">
+    <div class="confirm-password-form-field">
+      <label class="password-form-field-label" for="confirm-password">
+        <i class="pi pi-lock" style="font-size: 1.5rem"></i>
+      </label>
+      <span class="p-float-label" style="width: 100%;">
+        <p-password
+          id="confirm-password"
+          formControlName="confirmPassword"
+          class="input-field"
+          [feedback]="false"
+          (focusout)="onConfirmPasswordFocusOut()"
+          [style]="{'width': '100%'}"
+        />
+        <label for="confirm-password">Confirm your password</label>
+      </span>
+    </div>
+    <div *ngIf="isConfirmPasswordInvalid" [innerHTML]="getConfirmPasswordError()" class="error text-center"></div>
+    </div>
+  </form>
+
+  <ng-template pTemplate="footer">
+    <p-button (click)="onSubmit()" styleClass="p-raised-button" label="Submit" icon="pi pi-angle-double-right"></p-button>
+    </ng-template>
+</p-dialog>

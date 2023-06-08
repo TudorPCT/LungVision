@@ -1,0 +1,76 @@
+.image-wrapper{
+  height: 100%;
+}
+
+:host /deep/ .p-image-preview-container{
+  display: flex;
+  justify-content: center;
+}
+
+.bg-image {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vw;
+  width: auto;
+}
+
+.scan-wrapper{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 10%;
+  padding-left: 4%;
+}
+
+.scan-placeholder{
+  height: 54%;
+  width: 65%;
+  background-color: rgba(82, 82, 82, 0.61);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scan{
+  height: 54%;
+  width: 65%;
+  overflow: hidden;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+p-image{
+  height: 100%;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1366px) {
+  .image-wrapper{
+    height: 30%;
+  }
+
+  .scan-placeholder{
+    width: 35%;
+    height: 60%;
+  }
+
+  .scan{
+    width: 35%;
+    height: 60%;
+  }
+
+  .scan-wrapper{
+    padding-left: 2%;
+    padding-bottom: 7.5%;
+  }
+
+}

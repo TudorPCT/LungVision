@@ -1,0 +1,47 @@
+<div class="form-wrapper">
+  <div class="form-info" *ngIf="phase=='choose'">
+    <h3>{{info}}</h3>
+  </div>
+
+  <p-progressBar
+    *ngIf="phase=='loading'"
+    mode="indeterminate"
+    [style]="{'height':'6px'}"
+    class="custom-progress-bar"
+    ></p-progressBar>
+
+  <p-chart
+    *ngIf="phase=='result'"
+    type="doughnut"
+    [data]="data"
+    [options]="options"
+  ></p-chart>
+
+  <p-button
+    *ngIf="phase=='result'"
+    type="p-icon-button"
+    icon="pi pi-save"
+    (click)="onSavePressed.emit(true)"
+    [style]="{'position': 'absolute', 'top': '20px', 'right': '20px'}"
+    ></p-button>
+
+  <div class="form-info" *ngIf="phase=='result'">
+    <h3 style="font-size: 1.5rem">{{resultMessage}}</h3>
+  </div>
+
+  <p-fileUpload
+    (uploadHandler)="onPredict()"
+    (onSelect)="onSelect($event)"
+    (onClear)="onCancel()"
+    [multiple]="false"
+    [customUpload]="true"
+    accept="image/*"
+    [maxFileSize]="1000000000"
+    [disabled]="phase=='loading'"
+    [chooseLabel]="chooseLabel!"
+    [uploadLabel]="uploadLabel!"
+    [uploadIcon]="'pi pi-chart-pie'"
+    [cancelLabel]="cancelLabel!"
+    id="file-upload">
+  </p-fileUpload>
+</div>

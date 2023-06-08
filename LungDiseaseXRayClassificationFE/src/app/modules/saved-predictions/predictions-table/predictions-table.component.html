@@ -1,0 +1,124 @@
+<div class="card">
+  <p-table
+    #dt
+    [value]="predictions"
+    [rows]="10"
+    [paginator]="true"
+    [globalFilterFields]="['id', 'patientFirstName', 'patientLastName']"
+    [tableStyle]="{ 'min-width': '75rem' }"
+    [rowHover]="true"
+    dataKey="id"
+    currentPageReportTemplate="{{translate.instant('saved.table.showing')}}"
+    [showCurrentPageReport]="true"
+    [rowsPerPageOptions]="[10, 25, 50]"
+    [loading]="loading"
+    editMode="row"
+    responsiveLayout="stack"
+    [breakpoint]="'1200px'"
+    selectionMode="single"
+    [(selection)]="selectedPrediction"
+  >
+    <ng-template pTemplate="caption">
+      <div class="flex align-items-center justify-content-between">
+        <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input pInputText type="text" (input)="dt.filterGlobal($any($event.target).value, 'contains');" placeholder="{{translate.instant('search.keyword')}}" />
+        </span>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+      <tr>
+        <th pFrozenColumn="scan" style="width: calc(100%/8);">Scan </th>
+        <th pSortableColumn="patientFirstName" style="width:calc(100%/8);">{{translate.instant("patient.name.first")}} <p-sortIcon field="patientFirstName"></p-sortIcon></th>
+        <th pSortableColumn="patientLastName" style="width:calc(100%/8);">{{translate.instant("patient.name.first")}} <p-sortIcon field="patientLastName"></p-sortIcon></th>
+        <th pSortableColumn="patientAge" style="width:calc(100%/8);">{{translate.instant("patient.age")}} <p-sortIcon field="patientAge"></p-sortIcon></th>
+        <th pSortableColumn="patientGender" style="width:calc(100%/8);">{{translate.instant("patient.gender")}} <p-sortIcon field="patientGender"></p-sortIcon></th>
+        <th pSortableColumn="scanDate" style="width:calc(100%/8);">{{translate.instant("date")}} <p-sortIcon field="scanDate"></p-sortIcon></th>
+        <th pSortableColumn="prediction" style="width:calc(100%/8);">{{translate.instant("prediction")}} <p-sortIcon field="prediction"></p-sortIcon></th>
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-prediction let-editing="editing" let-ri="rowIndex">
+      <tr [pEditableRow]="prediction">
+        <td>
+          <p-image
+            src="{{ prediction.medicalScanUrl }}"
+            alt="Uploaded Scan"
+            width="100"
+            class="shadow-4"
+            [preview]="true"
+          ></p-image>
+        </td>
+        <td>
+          <p-cellEditor>
+              <ng-template pTemplate="input">
+                  <input pInputText type="text" [(ngModel)]="prediction.patientFirstName" />
+              </ng-template>
+              <ng-template pTemplate="output">
+                  {{ prediction.patientFirstName }}
+              </ng-template>
+          </p-cellEditor>
+        </td>
+        <td>
+          <p-cellEditor>
+              <ng-template pTemplate="input">
+                  <input pInputText type="text" [(ngModel)]="prediction.patientLastName" />
+              </ng-template>
+              <ng-template pTemplate="output">
+                  {{ prediction.patientLastName }}
+              </ng-template>
+          </p-cellEditor>
+        </td>
+
+        <td>
+          <p-cellEditor>
+              <ng-template pTemplate="input">
+                  <input pInputText type="number" [(ngModel)]="prediction.patientAge" />
+              </ng-template>
+              <ng-template pTemplate="output">
+                  {{ prediction.patientAge }}
+              </ng-template>
+          </p-cellEditor>
+        </td>
+
+        <td>
+          <p-cellEditor>
+            <ng-template pTemplate="input">
+              <p-dropdown
+                [options]="['Male', 'Female']"
+                (onChange)="prediction.patientGender = $event.value"
+                styleClass="input-field input-dropdown-field"
+              ></p-dropdown>
+            </ng-template>
+            <ng-template pTemplate="output">
+                {{ prediction.patientGender }}
+            </ng-template>
+          </p-cellEditor>
+        </td>
+
+        <td>
+          <p-cellEditor>
+            <ng-template pTemplate="input">
+              <p-calendar [(ngModel)]="chosenDate" [defaultDate]="chosenDate" dateFormat="dd.MM.yy" [touchUI]="true" [readonlyInput]="true"></p-calendar>
+            </ng-template>
+            <ng-template pTemplate="output">
+                {{ this.datePipe.transform(prediction.scanDate, "dd MMM yy") }}
+            </ng-template>
+          </p-cellEditor>
+        </td>
+        <td>
+            <p-tag [value]="prediction.lungDisease" [severity]="getSeverity(prediction.lungDisease)"></p-tag>
+        </td>
+        <td>
+          <div class="flex align-items-center justify-content-center gap-2">
+            <button *ngIf="!editing" pButton pRipple pInitEditableRow icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" (click)="editPrediction(prediction)"></button>
+            <button *ngIf="!editing" pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-error" (click)="deletePrediction(prediction, ri)"></button>
+            <button *ngIf="editing" pButton pRipple type="button" pSaveEditableRow icon="pi pi-check" (click)="onEditSave(prediction, ri)" class="p-button-rounded p-button-text p-button-success mr-2"></button>
+            <button *ngIf="editing" pButton pRipple type="button" pCancelEditableRow icon="pi pi-times" (click)="onEditCancel(prediction, ri)" class="p-button-rounded p-button-text p-button-danger"></button>
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+

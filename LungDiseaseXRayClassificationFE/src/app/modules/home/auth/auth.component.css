@@ -1,0 +1,86 @@
+:host /deep/ .p-dialog-header, :host /deep/ .p-dialog-content, :host /deep/ .p-dialog-footer{
+  background-color: #0d051c;
+  color: #d0c3e0;
+}
+
+:host /deep/ .p-dialog-header{
+  border-bottom: #808080 solid 2px;
+}
+
+:host /deep/ .p-dialog-header-close-icon{
+  color: #808080 !important;
+}
+
+:host /deep/ .p-dialog-title{
+  font-size: 30px !important;
+}
+
+.auth-form{
+  padding: 5%;
+  align-items: center;
+  height: 80%;
+}
+
+.email-form-field, .password-form-field, .confirm-password-form-field{
+  display: flex;
+  flex-direction: row;
+  gap: 6%;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10%;
+}
+
+.email-form-field-label, .password-form-field-label{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+}
+
+.input-field, :host /deep/ .p-password-input{
+  width: 90%;
+  background: transparent;
+  border: none;
+  border-bottom: #808080 solid 2px;
+  /*color: #E0CFC3;*/
+}
+
+#password, #confirm-password{
+  border: none;
+}
+
+.error{
+  color: rgb(255, 54, 54);
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+
+input.ng-dirty.ng-invalid, :host /deep/ p-password.ng-invalid.ng-dirty > .p-password > .p-inputtext {
+  border-color: red
+}
+
+:host /deep/ .p-divider-content{
+  background: #0d051c;
+  padding: 0 !important;
+}
+
+:host /deep/ .p-password-panel, :host /deep/ .p-togglebutton.p-button{
+  background: #0b0618;
+}
+
+:host /deep/ .p-togglebutton.p-button{
+  border: #BA68C8 1px solid;
+}
+
+:host /deep/ .p-togglebutton.p-button.p-highlight{
+  background: #BA68C8;
+}
+
+p-checkbox{
+  margin-top: 25px;
+}
+
+:host /deep/ .p-float-label > .ng-invalid.ng-dirty + label{
+  color: #808080;
+}

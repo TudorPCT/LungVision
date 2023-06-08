@@ -1,0 +1,91 @@
+.main{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  user-select: none;
+  width: 100%;
+  margin-bottom: 2%;
+}
+
+:host /deep/ .p-menu.p-menu-overlay, :host /deep/ .p-menu .p-submenu-header{
+  background-color: #0d051c;
+}
+
+.main > .branding {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 600px;
+}
+
+.main > .branding > .logo-wrapper {
+  width: 25%;
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main > .branding > h1 {
+  width: 75%;
+  height: auto;
+}
+
+.main > .branding > h1 > span{
+  font-size: 4rem;
+  font-family: cursive;
+  font-weight: bold;
+}
+
+.main > .branding > h1 > .branding-text{
+  color: #cdc2da;
+}
+
+.main > .nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px;
+  background-color: transparent;
+  gap: 5%;
+  width: 55%;
+}
+
+.main > .nav > div > .p-element :host /deep/ button{
+  font-size: 1.5rem;
+  padding: 0 1rem 0.15rem 1rem;
+  margin: 0;
+  border: none;
+}
+
+
+div > .language-picker{
+  width: 55px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+:host /deep/ .p-dropdown {
+  width: 76px !important;
+  background: none;
+  border: none;
+}
+
+
+:host /deep/ .p-hidden-accessible {
+  display: none !important;
+}
+
+.main > .nav > div > .p-element, .main > .nav > div > .pi{
+  color: rgba(255, 255, 255, 0.87);
+}
+
+@media screen and (max-width: 768px){
+  .main > .branding > h1 > span{
+    font-size: 2rem;
+  }
+}

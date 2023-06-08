@@ -1,0 +1,21 @@
+<app-header></app-header>
+
+<div class="d-flex flex-md-row justify-content-evenly page-wrapper">
+  <app-scan-display
+    class="col-md-6 p-3 scan-display"
+    [scan]="scan">
+  </app-scan-display>
+  <app-scan-form
+    class="col-md-5 scan-form"
+    (scan)="scan = $event"
+    (onSavePressed)="showModal = true"
+  >
+  </app-scan-form>
+
+  <app-scan-save
+  [display]="showModal"
+  (displayValueUpdated)="showModal=$event"
+  [scan]="scan"></app-scan-save>
+
+
+</div>

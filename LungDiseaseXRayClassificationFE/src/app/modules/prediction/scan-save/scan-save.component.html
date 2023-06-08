@@ -1,0 +1,97 @@
+<p-dialog
+  header="{{title}}"
+  [(visible)]="display"
+  [modal]="true"
+  [draggable]="false"
+  [resizable]="true"
+  (onHide)="onHide()"
+  position="right"
+  [style]="{ width: '600px' ,
+    'height': '650px',
+     'background-color': '#0d051c',
+     'border-radius': '10px',
+     'padding': '30px',
+     'color': '#E0CFC3'}"
+>
+  <form [formGroup]="scanSaveForm" (ngSubmit)="onSubmit()" class="scan-save-form">
+    <div class="form-field">
+      <label class="name-form-field-label" for="first-name">
+        <i class="pi pi-user" style="font-size: 24px"></i>
+      </label>
+      <input
+        type="name"
+        name="patient-first-name"
+        id="first-name"
+        pInputText
+        formControlName="firstName"
+        placeholder="Enter the patient's first name"
+        class="input-field"
+        (focusout)="onFirstNameFocusOut()"
+      />
+    </div>
+    <div *ngIf="isFirstNameInvalid" [innerHTML]="getFirstNameError()" class="error text-center"></div>
+
+    <div class="form-field">
+      <label class="name-form-field-label" for="last-name">
+        <i class="pi pi-user" style="font-size: 24px"></i>
+      </label>
+      <input
+        type="name"
+        name="patient-last-name"
+        id="last-name"
+        pInputText
+        formControlName="lastName"
+        placeholder="Enter the patient's last name"
+        class="input-field"
+        (focusout)="onLastNameFocusOut()"
+      />
+    </div>
+    <div *ngIf="isLastNameInvalid" [innerHTML]="getLastNameError()" class="error text-center"></div>
+
+    <div class="form-field">
+      <label class="age-form-field-label" for="age">
+        <i class="pi pi-user" style="font-size: 24px"></i>
+      </label>
+      <input
+        type="number"
+        name="patient-age"
+        id="age"
+        pInputText
+        formControlName="age"
+        placeholder="Enter the patient's age"
+        class="input-field"
+        min="0"
+        max="120"
+        (focusout)="onAgeFocusOut()"
+      />
+    </div>
+    <div *ngIf="isAgeInvalid" [innerHTML]="getAgeError()" class="error text-center"></div>
+
+    <div class="form-field">
+      <label class="gender-form-field-label">
+        <i class="pi pi-users" style="font-size: 30px"></i>
+      </label>
+      <p-dropdown
+        [options]="genders"
+        (onChange)="selectedGender = $event.value"
+        styleClass="input-field input-dropdown-field"
+      ></p-dropdown>
+
+    </div>
+
+    <div class="flex-column justify-content-center align-items-center calendar-wrapper" style="display: flex;">
+      <h5>The date when the scan was performed</h5>
+      <p-calendar
+        id="calendar"
+        [inline]="true"
+        [maxDate]="today"
+        (onSelect)="select($event)"
+        [firstDayOfWeek]="1"
+        [style]="{'background': 'transparent'}"
+      ></p-calendar>
+    </div>
+  </form>
+  <ng-template pTemplate="footer">
+    <p-button (click)="onSubmit()" styleClass="p-button-text" label="Submit" icon="pi pi-chevron-double-right"></p-button>
+    </ng-template>
+</p-dialog>
