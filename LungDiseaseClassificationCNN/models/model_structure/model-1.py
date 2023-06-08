@@ -2,7 +2,8 @@ import tensorflow as tf
 import os
 
 from models.util import train_model, load_datasets, evaluate_model
-from models.statistics import draw_loss_accuracy_graph
+from models.statistics import draw_loss_accuracy_graph, draw_confusion_matrix
+
 
 def build_model(shape, class_count):
     inputs = tf.keras.Input(shape=shape)
@@ -35,4 +36,11 @@ if __name__ == '__main__':
 
     evaluate_model(model, test_dataset)
 
-    draw_loss_accuracy_graph("../trained_model/model-1", test_dataset)
+    best_epoch = draw_loss_accuracy_graph(f"../trained_model/{filename}", test_dataset)
+
+    print(f"Best epoch: {best_epoch}")
+
+    draw_confusion_matrix(
+        "../trained_model/{}/epoch_{:0>2d}".format(filename, 7),
+        test_dataset
+    )

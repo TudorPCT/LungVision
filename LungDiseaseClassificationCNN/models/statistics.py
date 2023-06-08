@@ -2,8 +2,8 @@ import os
 
 import matplotlib.pyplot as plt
 import numpy as np
-from tensorflow import keras
-
+from tensorflow import keras, math
+import seaborn as sns
 
 def get_loss_accuracy_all_epochs(model_path, dataset):
     loss = list()
@@ -21,8 +21,6 @@ def get_loss_accuracy_all_epochs(model_path, dataset):
 
 
 def draw_loss_accuracy_graph(model_path, test_dataset):
-
-
     filename = os.path.basename(model_path)
     history = np.load(f'../model_history/{filename}-history.npy', allow_pickle=True).item()
 
@@ -30,22 +28,54 @@ def draw_loss_accuracy_graph(model_path, test_dataset):
 
     epochs_count = range(1, len(test_loss) + 1)
 
-    plt.plot(epochs_count, test_loss, 'r', label='Eroare testare')
-    plt.plot(epochs_count, history['loss'], 'g', label='Eroare antrenare')
-    plt.plot(epochs_count, history['val_loss'], 'b', label='Eroare validare')
-    plt.title('Eroare')
+    plt.plot(epochs_count, test_loss, 'r', label='Testare')
+    plt.plot(epochs_count, history['loss'], 'g', label='Antrenare')
+    plt.plot(epochs_count, history['val_loss'], 'b', label='Validare')
     plt.xlabel('Epoca')
     plt.ylabel('Eroare')
     plt.legend()
-    plt.savefig(f'../model_history/{filename}-loss.png')
+    plt.savefig(f'../model_graphs/{filename}-loss.png')
     plt.clf()
 
-    plt.plot(epochs_count, test_accuracy, 'r', label='Acuratete testare')
-    plt.plot(epochs_count, history['accuracy'], 'g', label='Acuratete antrenare')
-    plt.plot(epochs_count, history['val_accuracy'], 'b', label='Acuratete validare')
-    plt.title('Acuratete')
+    plt.plot(epochs_count, test_accuracy, 'r', label='Testare')
+    plt.plot(epochs_count, history['accuracy'], 'g', label='Antrenare')
+    plt.plot(epochs_count, history['val_accuracy'], 'b', label='Validare')
     plt.xlabel('Epoca')
-    plt.ylabel('Acuratete')
+    plt.ylabel('Acuratețe')
     plt.legend()
-    plt.savefig(f'../model_history/{filename}-accuracy.png')
+    plt.savefig(f'../model_graphs/{filename}-accuracy.png')
     plt.clf()
+
+    return test_accuracy.index(max(test_accuracy)) + 1
+
+
+def draw_confusion_matrix(model_path, dataset):
+    predicted = list()
+    actual = list()
+
+    model = keras.models.load_model(model_path)
+
+    for batch, labels in dataset:
+        actual += list(labels)
+        predicted += list(np.argmax(model.predict(batch), axis=-1))
+
+    confusion_matrix = math.confusion_matrix(actual, predicted)
+
+    plt.figure(figsize=(10, 7))
+    sns.set()
+    sns.heatmap(confusion_matrix,
+                annot=True,
+                xticklabels=dataset.class_names,
+                yticklabels=dataset.class_names,
+                cmap=sns.dark_palette("#69d", as_cmap=True))
+
+    plt.xlabel('Estimat')
+    plt.ylabel('Corect')
+
+    folder_names = model_path.split('/')
+    plt.savefig(f'../model_graphs/{folder_names[-2]}-{folder_names[-1]}-confusion_matrix.png')
+
+
+
+
+
