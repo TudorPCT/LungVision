@@ -101,7 +101,7 @@ export class ScanSaveComponent implements OnInit{
   }
 
   select($event: any) {
-    this.selectedGender = $event.value ? $event.value : 'Female';
+    this.selectedDate = $event.value ? $event.value : new Date();
   }
 
   onAgeFocusOut() {
