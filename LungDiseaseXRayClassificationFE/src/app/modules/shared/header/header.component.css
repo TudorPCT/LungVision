@@ -89,3 +89,9 @@ div > .language-picker{
     font-size: 2rem;
   }
 }
+
+@media screen and (max-width: 375px){
+  .main > .branding > h1 > span{
+    font-size: 1.5rem;
+  }
+}
