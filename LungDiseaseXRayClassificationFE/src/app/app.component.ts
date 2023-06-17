@@ -8,7 +8,7 @@ import {TranslateService} from "@ngx-translate/core";
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
-  title = 'LungDiseaseXRayClassificationFE';
+  title = 'LungVision';
 
   constructor(public translate: TranslateService) {
     translate.addLangs(['en']);
