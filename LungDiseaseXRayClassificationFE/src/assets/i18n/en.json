@@ -10,7 +10,7 @@
   "error.isRequired": "{{field}} is required!",
   "error.invalid": "{{field}} is invalid!",
   "error.passwordsNotMatch": "Passwords do not match!",
-  "error.passwordPattern": "Password must be at least 8 characters long and contain at least one number and one special character!",
+  "error.passwordPattern": "Password is invalid!",
   "error.unknownError": "Unknown error occurred!",
   "error.emailAlreadyRegistered": "Email already exists!",
   "headline": "Get Accurate X-Ray Scan Analysis with Our AI-Powered CNN Algorithm",
