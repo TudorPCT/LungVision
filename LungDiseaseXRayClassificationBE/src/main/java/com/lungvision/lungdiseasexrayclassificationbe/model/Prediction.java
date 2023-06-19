@@ -38,8 +38,6 @@ public class Prediction {
     private Integer patientAge;
     private String patientGender;
 
-    private LocalDateTime scanDate;
-
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "prediction", cascade = CascadeType.ALL)
 
     private MedicalScan medicalScan;
@@ -62,8 +60,7 @@ public class Prediction {
         this.patientLastName = patientLastName;
         this.patientAge = patientAge;
         this.patientGender = patientGender;
-        this.scanDate = scanDate;
-        this.medicalScan = new MedicalScan(null, this, fileId, fileName, fileType);
+        this.medicalScan = new MedicalScan(null, this, fileId, scanDate, fileName, fileType);
     }
 
 }
