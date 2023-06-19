@@ -113,6 +113,9 @@ export class AuthComponent implements OnInit{
     this.isPasswordInvalid = false;
     this.isConfirmPasswordInvalid = false;
     this.formHeight = this.signUpTrigger ? '500px' : '600px';
-  }
 
+    this.authForm.controls.email.setValue('');
+    this.authForm.controls.password.setValue('');
+    this.authForm.controls.confirmPassword.setValue('');
+  }
 }
