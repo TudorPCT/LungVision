@@ -154,7 +154,7 @@ public class PredictionServiceImpl implements PredictionService{
         prediction.setPatientLastName(savedPredictionDto.getPatientLastName());
         prediction.setPatientAge(savedPredictionDto.getPatientAge());
         prediction.setPatientGender(savedPredictionDto.getPatientGender());
-        prediction.setScanDate(savedPredictionDto.getScanDate());
+        prediction.getMedicalScan().setScanDate(savedPredictionDto.getScanDate());
 
         predictionRepository.save(prediction);
 
@@ -164,9 +164,16 @@ public class PredictionServiceImpl implements PredictionService{
     @Override
     public String delete(String id, String userId) {
         Locale locale = LocaleContextHolder.getLocale();
-        predictionRepository.deleteByIdAndOwnerId(id, userId);
 
-        return messageSource.getMessage("prediction.success.delete", null, locale);
+        Prediction prediction = predictionRepository.findById(id).orElseThrow(() -> new PredictionNotFoundException(messageSource.getMessage("prediction.error.not.found", null, locale)));
+
+        try {
+            cloudinary.uploader().destroy(prediction.getMedicalScan().getFileId(), ObjectUtils.emptyMap());
+            predictionRepository.deleteByIdAndOwnerId(id, userId);
+            return messageSource.getMessage("prediction.success.delete", null, locale);
+        } catch (IOException e) {
+            throw new CloudinaryException(messageSource.getMessage("prediction.error.cloudinary.delete", null, locale));
+        }
     }
 
     @Override

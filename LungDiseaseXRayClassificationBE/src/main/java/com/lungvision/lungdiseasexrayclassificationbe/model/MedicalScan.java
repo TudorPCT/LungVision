@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 
+import java.time.LocalDateTime;
+
 @Data
 @Entity
 @AllArgsConstructor
@@ -25,6 +27,8 @@ public class MedicalScan {
     private Prediction prediction;
 
     private String fileId;
+
+    private LocalDateTime scanDate;
 
     private String fileName;
 

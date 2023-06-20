@@ -12,7 +12,7 @@ public class PredictionMapper {
                 .patientAge(prediction.getPatientAge())
                 .patientGender(prediction.getPatientGender())
                 .lungDisease(prediction.getLungDisease())
-                .scanDate(prediction.getScanDate())
+                .scanDate(prediction.getMedicalScan().getScanDate())
                 .medicalScanUrl(imageServiceUrl.concat(prediction.getMedicalScan().getFileId()))
                 .build();
     }
