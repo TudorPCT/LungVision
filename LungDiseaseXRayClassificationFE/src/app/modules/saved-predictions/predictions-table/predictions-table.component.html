@@ -85,8 +85,8 @@
           <p-cellEditor>
             <ng-template pTemplate="input">
               <p-dropdown
-                [options]="['Male', 'Female']"
-                (onChange)="prediction.patientGender = $event.value"
+                [options]="['Female', 'Male']"
+                [(ngModel)]="prediction.patientGender"
                 styleClass="input-field input-dropdown-field"
               ></p-dropdown>
             </ng-template>

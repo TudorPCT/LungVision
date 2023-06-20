@@ -1,12 +1,9 @@
 import {Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import {MessageService, SelectItem} from "primeng/api";
+import {MessageService} from "primeng/api";
 import {PredictionService} from "../../../services/prediction/prediction.service";
 import {SavePredictionRequest} from "../../../models/save-prediction-request";
 import {PredictionDto} from "../../../models/prediction-dto";
-import {catchError, tap} from "rxjs/operators";
-import {EMPTY} from "rxjs";
-import {HttpErrorResponse, HttpResponse} from "@angular/common/http";
 import {TranslateService} from "@ngx-translate/core";
 
 @Component({
@@ -101,7 +98,7 @@ export class ScanSaveComponent implements OnInit{
   }
 
   select($event: any) {
-    this.selectedGender = $event.value ? $event.value : 'Female';
+    this.selectedDate = $event ? $event : new Date();
   }
 
   onAgeFocusOut() {

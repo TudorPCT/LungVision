@@ -23,7 +23,7 @@ export class AuthComponent implements OnInit{
       '',
       [
         Validators.required,
-        Validators.pattern("^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$")
+        Validators.pattern("^(?=.*[A-Za-z])(?=.*\\d)(?=.*[-@$!%*#?&])[A-Za-z\\d-@$!%*#?&]{8,}$")
       ]),
     confirmPassword: new FormControl('', [Validators.required]),
   });
@@ -113,6 +113,9 @@ export class AuthComponent implements OnInit{
     this.isPasswordInvalid = false;
     this.isConfirmPasswordInvalid = false;
     this.formHeight = this.signUpTrigger ? '500px' : '600px';
-  }
 
+    this.authForm.controls.email.reset();
+    this.authForm.controls.password.reset();
+    this.authForm.controls.confirmPassword.reset();
+  }
 }
