@@ -1,6 +1,6 @@
 # LungVision
 
-Lucrarea de licență se concentrează pe proiectarea și implementarea unui sistem de predicție medicală, folosind învățarea automată, pentru asistarea personalului medical în procesul de diagnosticare a uneia dintre bolile pulmonare: pneumonie, tuberculoză, covid-19. Sunt prezentate atât detalii ale procesului de construire ale unui model de rețea neuronală convoluțională potrivit, cât și arhitectura și implementarea unei aplicații web, ce servește ca interfață. Pentru a realiza acest deziderat am folosit o arhitectură de forma client-server. un tech stack diversificat, incluzând Angular pentru frontend, Java pentru backend și Python pentru dezvoltarea și interacțiunea cu modelele de învățare automată.
+The bachelor's thesis focuses on the design and implementation of a medical prediction system using machine learning to assist healthcare professionals in the diagnostic process of one of the lung diseases: pneumonia, tuberculosis, and COVID-19. It presents both the details of building a suitable convolutional neural network model and the architecture and implementation of a web application serving as the interface. To achieve this goal, a client-server architecture was used, along with a diverse tech stack, including Angular for the frontend, Java for the backend, and Python for the development and interaction with the machine learning models.
 
 ## Demo
 
